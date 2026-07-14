@@ -12,10 +12,12 @@ public_users.post("/register", (req, res) => {
       users.push({ "username": username, "password": password });
       return res.status(200).json({ message: "user added successfully" });
     }else{
-        return res.status(404).json({ message: "user already exists" });        
+        return res.status(404).json({ message: "user already exists." });
     }
   } else {
     return res.status(404).json({ message: "Unable to register user. Username and password are required." });
+  }
+  return res.status(404).json({ message: "unable to register the user" });
 });
 
 // Task 6: Get the book list — using Promises (.then)
